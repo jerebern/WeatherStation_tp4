@@ -16,6 +16,7 @@ namespace WeatherApp.Services
 
         public OpenWeatherService(string apiKey)
         {
+            LastTemp = new TemperatureModel();
             owp = OpenWeatherProcessor.Instance;
             owp.ApiKey = apiKey;
         }
@@ -26,6 +27,7 @@ namespace WeatherApp.Services
             var result = await owp.GetCurrentWeatherAsync();
             
             long longDate = result.DateTime;
+          
             LastTemp.DateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(longDate).ToLocalTime();
             LastTemp.Temperature = result.Main.Temperature;
 

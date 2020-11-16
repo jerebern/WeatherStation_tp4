@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UserSecretsId>d9d4eb7d-eb61-4a03-8078-317c54d43858</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

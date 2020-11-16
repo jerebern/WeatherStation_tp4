@@ -21,7 +21,7 @@ namespace WeatherApp
             string apiKey = AppConfiguration.GetValue("OWApiKey");
             ApiHelper.InitializeClient();
             ITemperatureService temperatureService = new OpenWeatherService(apiKey);
-            vm = new TemperatureViewModel();
+            vm = new TemperatureViewModel(temperatureService);
 
             DataContext = vm;           
         }

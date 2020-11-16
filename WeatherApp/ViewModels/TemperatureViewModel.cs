@@ -32,6 +32,11 @@ namespace WeatherApp.ViewModels
                     return string.Empty;
             }
         }
+        public TemperatureViewModel(ITemperatureService temperatureService)
+        {
+            GetTempCommand = new DelegateCommand<string>(GetTemp, CanGetTemp);
+            this.TemperatureService = temperatureService;
+        }
 
         public TemperatureViewModel()
         {
